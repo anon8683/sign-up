@@ -3,6 +3,7 @@
 :root {
   font-family: "Nanum Gothic", sans-serif;
   font-weight: 400;
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
   --red-color: #b8061a;
   --main-background: #ffffff;
 }
@@ -15,13 +16,15 @@
 
 body {
   height: 100vh;
+  width: 100vw;
   display: flex;
+  flex-grow: 1;
   flex-direction: row;
   background-color: var(--main-background);
 }
 
 #left-image {
-  height: 100vh;
+  height: 100%;
   width: 40vw;
   background-image: url(images/medium-cocktail.jpg);
   background-size: cover;
@@ -31,10 +34,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 1;
+  flex-grow: 1;
   width: 60vw;
   padding: 20px;
-  padding-right: 200px;
 }
 
 .right {
@@ -52,10 +54,10 @@ body {
 }
 
 #form-container {
-  width: 1000px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  flex: 1;
   padding: 50px;
   gap: 20px;
   box-shadow: 0 4px 2px -2px rgb(202, 197, 197);
@@ -96,7 +98,7 @@ input:focus {
 .description,
 .bait,
 .motivate {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: 600;
   line-height: 135%;
   letter-spacing: 1px;
@@ -131,9 +133,57 @@ label {
 
 input {
   padding: 4px;
-  width: 400px;
 }
 
 .input-div {
-  margin-right: 40px;
+  width: min(270px, 500px);
+}
+
+@media (max-width: 800px) {
+  #left-image {
+    background-image: none;
+    width: 0;
+  }
+
+  #right-container {
+    width: 100vw;
+    background-image: url(images/medium-cocktail.jpg);
+    background-size: 180%;
+  }
+
+  form {
+    background: transparent;
+  }
+
+  .description,
+  .bait,
+  .motivate {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 600;
+    line-height: 135%;
+    letter-spacing: 1px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: white;
+  }
+  button {
+    margin-left: 25px;
+  }
+
+  #form-container {
+    padding: 10px;
+    flex-shrink: 1;
+    gap: 0px;
+    justify-content: center;
+  }
+
+  .input-div {
+    background-color: white;
+    border-radius: 1px;
+    padding: 20px;
+  }
+
+  .login {
+    color: white;
+  }
 }
