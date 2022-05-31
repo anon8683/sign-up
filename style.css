@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Open+Sans&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Playball&display=swap");
 :root {
   font-family: "Nanum Gothic", sans-serif;
   font-weight: 400;
@@ -15,8 +15,6 @@
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
   display: flex;
   flex-grow: 1;
   flex-direction: row;
@@ -24,10 +22,34 @@ body {
 }
 
 #left-image {
-  height: 100%;
+  height: 100vh;
   width: 40vw;
   background-image: url(images/medium-cocktail.jpg);
   background-size: cover;
+  background-position: center;
+}
+
+.logo {
+  background-color: rgb(22, 21, 21);
+  opacity: 60%;
+  height: 100px;
+  position: relative;
+  top: 125px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  /* background-color: transparent; */
+}
+
+h1 {
+  color: rgb(218, 255, 8);
+  font-size: 1.7rem;
+  padding: 10px;
+  font-family: "Playball", cursive;
+}
+img {
+  width: 70px;
 }
 
 #right-container {
@@ -149,6 +171,8 @@ input {
     width: 100vw;
     background-image: url(images/medium-cocktail.jpg);
     background-size: 180%;
+    justify-content: center;
+    align-items: center;
   }
 
   form {
@@ -165,9 +189,8 @@ input {
     padding-left: 50px;
     padding-right: 50px;
     color: white;
-  }
-  button {
-    margin-left: 25px;
+    text-align: center;
+    text-shadow: 1px 1px black;
   }
 
   #form-container {
@@ -179,11 +202,25 @@ input {
 
   .input-div {
     background-color: white;
-    border-radius: 1px;
     padding: 20px;
   }
 
   .login {
     color: white;
+  }
+
+  .button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    text-shadow: 1px 1px black;
+  }
+  h1,
+  img {
+    visibility: hidden;
   }
 }
