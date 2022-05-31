@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Open+Sans&display=swap");
+
+:root {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+  --red-color: #b8061a;
+  --main-background: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,21 +17,24 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: row;
+  background-color: var(--main-background);
 }
 
 #left-image {
   height: 100vh;
-  width: 35vw;
-  background-image: url(/images/medium-cocktail.jpg);
+  width: 40vw;
+  background-image: url(images/medium-cocktail.jpg);
   background-size: cover;
 }
 
 #right-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   flex: 1;
-  width: 65vw;
+  width: 60vw;
   padding: 20px;
+  padding-right: 200px;
 }
 
 .right {
@@ -31,26 +43,97 @@ body {
 }
 
 .intro {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .bait {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 
 #form-container {
-  width: 600px;
+  width: 1000px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
-}
-
-label {
-  display: block;
+  padding: 50px;
+  gap: 20px;
+  box-shadow: 0 4px 2px -2px rgb(202, 197, 197);
 }
 
 form {
-  background-color: rgb(153, 155, 155);
+  background-color: rgb(255, 255, 255);
+}
+
+a {
+  color: var(--red-color);
+  text-decoration: none;
+}
+
+button {
+  width: 200px;
+  background-color: var(--red-color);
+  color: rgba(255, 255, 255, 0.822);
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+button:active {
+  background-color: #6d2f37;
+}
+
+input:focus {
+  border: 3px solid blue;
+}
+
+.error {
+  display: block;
+}
+
+.description,
+.bait,
+.motivate {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 135%;
+  letter-spacing: 1px;
+}
+
+em {
+  color: var(--red-color);
+  font-weight: 1000;
+}
+
+.button {
+  padding: 50px;
+}
+
+.login {
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.error {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #810310;
+}
+label {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: rgb(51, 51, 51);
+  margin-bottom: 8px;
+  display: block;
+}
+
+input {
+  padding: 4px;
+  width: 400px;
+}
+
+.input-div {
+  margin-right: 40px;
 }
