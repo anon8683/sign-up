@@ -109,10 +109,6 @@ button:active {
   background-color: #6d2f37;
 }
 
-input:focus {
-  border: 3px solid blue;
-}
-
 .error {
   display: block;
 }
@@ -155,10 +151,43 @@ label {
 
 input {
   padding: 4px;
+  -webkit-appearance: none;
+  border: 1px solid rgb(80, 78, 78);
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid rgb(133, 133, 241);
+}
+
+/* input:valid {
+  outline: none;
+  border: 2px solid green;
+} */
+
+.invalid {
+  border: 2px solid red;
+}
+
+.valid {
+  border: 2px solid green;
 }
 
 .input-div {
   width: min(270px, 500px);
+}
+
+span {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.firstError,
+.secondError {
+  color: var(--red-color);
 }
 
 @media (max-width: 800px) {

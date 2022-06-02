@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
   </head>
   <body>
-    <section class="left">
-        
+    <section class="left">     
       <div id="left-image">
           <div class="logo">
               <div>
@@ -22,53 +21,47 @@
           </div>
       </div>
     </section>
-
     <section class="right">
       <div id="right-container">
         <div class="intro">
           <p class="description">
             This is not a real online service! Lorem ipsum dolor sit amet consectetur,
              adipisicing elit. Necessitatibus, commodi!<br>
-
-            Sign up <em>now</em> to get started.
-            
+            Sign up <em>now</em> to get started. 
           </p>
-
           <p class="bait">You <em>know</em> you want to..</p>
-        
-        
-          <form action="#" method="post" >
+          <form action="#" method="post"  >
               <p class="motivate">Let's do this!</p>
             <div id="form-container">
             <div class="input-div">
               <label for="firstName">FIRST NAME</label>
-              <input type="text" name="firstName" id="firstName" />
-              <span class="error">oops error</span>
+              <input type="text" name="firstName" id="firstName" required pattern="[-a-zA-Z]+"/>
+              <span class="firstError"></span>
             </div>
             <div class="input-div">
-              <label for="firstName">SECOND NAME</label>
-              <input type="text" name="secondName" id="secondName">
-              <span class="error">oops error</span>
+              <label for="secondName">SECOND NAME</label>
+              <input type="text" name="secondName" id="secondName" required pattern="[-a-zA-Z]+">
+              <span class="secondError"></span>
             </div>
             <div class="input-div">
                 <label for="email">EMAIL</label>
-                <input type="email" name="email" id="email">
-                <span class="error">oops error</span>
+                <input type="email" name="email" id="email" value="" placeholder="test@example.com" required>
+                <span class="emailError"></span>
             </div>
             <div class="input-div">
                 <label for="phone">PHONE NUMBER (+44)</label>
-                <input type="tel" name="phone" id="phone">
-                <span class="error">oops error</span>
+                <input type="tel" name="phone" id="phone" required pattern="^(07[\d]{8,12}|447[\d]{7,11})$" placeholder="eg. 07392049142">
+                <span class="phoneError"></span>
             </div>
             <div class="input-div">
                 <label for="password">PASSWORD</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" required>
                 <span class="error">oops error</span>
                 
             </div>
             <div class="input-div">
                 <label for="passCheck">CONFIRM PASSWORD</label>
-                <input type="password" name="passCheck" id="passCheck">
+                <input type="password" name="passCheck" id="passCheck" required>
                 <span class="error">oops error</span>
             </div> 
         </div>
@@ -76,11 +69,9 @@
         <div class="button">
             <button type="submit">Create account</button>
         </form>
-            <p class="login">Already have an account? <a href="#">Log in</a></p>
-            
+            <p class="login">Already have an account? <a href="#">Log in</a></p>          
         </div>
-      </div>
-      
+      </div> 
     </section>
   </body>
 </html>
