@@ -186,11 +186,15 @@ span {
   height: 10px;
 }
 
+.submitError {
+  margin-bottom: 20px;
+}
+
 .firstError,
 .secondError,
 .emailError,
 .phoneError,
-.passerror,
+.passError,
 .passCheckError {
   color: var(--red-color);
 }

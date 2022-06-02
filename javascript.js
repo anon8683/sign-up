@@ -12,6 +12,7 @@ const emailError = document.querySelector(".emailError");
 const phoneError = document.querySelector(".phoneError");
 const passError = document.querySelector(".passError");
 const passCheck = document.querySelector(".passCheckError");
+const submitError = document.querySelector(".submitError");
 
 let matched = false;
 
@@ -80,6 +81,10 @@ pass.addEventListener("change", (e) => {
   if (pass.validity.valid) {
     pass.className = "valid";
     passError.textContent = "";
+    if (passC.value != "") {
+      passCheck.textContent = "Passwords do not match";
+      passC.className = "invalid";
+    }
     return;
   }
   pass.className = "invalid";
@@ -110,5 +115,6 @@ submit.addEventListener("click", (e) => {
     matched === false
   ) {
     e.preventDefault();
+    return;
   }
 });
