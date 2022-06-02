@@ -4,6 +4,7 @@ const email = document.querySelector("#email");
 const phone = document.querySelector("#phone");
 const pass = document.querySelector("#password");
 const passC = document.querySelector("#passCheck");
+const submit = document.querySelector("button");
 
 const firstError = document.querySelector(".firstError");
 const secondError = document.querySelector(".secondError");
@@ -11,6 +12,8 @@ const emailError = document.querySelector(".emailError");
 const phoneError = document.querySelector(".phoneError");
 const passError = document.querySelector(".passError");
 const passCheck = document.querySelector(".passCheckError");
+
+let matched = false;
 
 firstName.addEventListener("change", (e) => {
   if (firstName.validity.valid) {
@@ -89,9 +92,23 @@ passC.addEventListener("change", (e) => {
     if (passC.value === pass.value) {
       passC.className = "valid";
       passCheck.textContent = "";
+      matched = true;
       return;
     }
   }
   passC.className = "invalid";
   passCheck.textContent = "Passwords do not match";
+});
+
+submit.addEventListener("click", (e) => {
+  if (
+    !firstName.validity.valid ||
+    !secondName.validity.valid ||
+    !email.validity.valid ||
+    !phone.validity.valid ||
+    !pass.validity.valid ||
+    matched === false
+  ) {
+    e.preventDefault();
+  }
 });
