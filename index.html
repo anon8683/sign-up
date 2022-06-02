@@ -55,14 +55,14 @@
             </div>
             <div class="input-div">
                 <label for="password">PASSWORD</label>
-                <input type="password" name="password" id="password" required>
-                <span class="error">oops error</span>
+                <input type="password" name="password" id="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
+                <span class="passError"></span>
                 
             </div>
             <div class="input-div">
                 <label for="passCheck">CONFIRM PASSWORD</label>
-                <input type="password" name="passCheck" id="passCheck" required>
-                <span class="error">oops error</span>
+                <input type="password" name="passCheck" id="passCheck" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
+                <span class="passCheckError"></span>
             </div> 
         </div>
         </div>

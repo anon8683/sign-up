@@ -183,10 +183,15 @@ span {
   margin-top: 5px;
   font-size: 0.6rem;
   font-weight: 600;
+  height: 10px;
 }
 
 .firstError,
-.secondError {
+.secondError,
+.emailError,
+.phoneError,
+.passerror,
+.passCheckError {
   color: var(--red-color);
 }
 
