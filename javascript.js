@@ -81,10 +81,7 @@ pass.addEventListener("change", (e) => {
   if (pass.validity.valid) {
     pass.className = "valid";
     passError.textContent = "";
-    if (passC.value != "") {
-      passCheck.textContent = "Passwords do not match";
-      passC.className = "invalid";
-    }
+    matched = false;
     return;
   }
   pass.className = "invalid";
@@ -112,7 +109,7 @@ submit.addEventListener("click", (e) => {
     !email.validity.valid ||
     !phone.validity.valid ||
     !pass.validity.valid ||
-    matched === false
+    matched === true
   ) {
     e.preventDefault();
     return;
